@@ -1,0 +1,4 @@
+include ':kotlin-log-analytics-firebase'
+include ':kotlin-log-analytics-firebase-sample'
+
+rootProject.name = "kotlin-log-analytics-firebase"

@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion versions.compileSdk
+    buildToolsVersion versions.buildTools
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    defaultConfig {
+        minSdkVersion versions.minSdk
+        consumerProguardFiles 'proguard-rules.pro'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    api deps.kotlin.stdlib
+
+    implementation "com.github.inmotionsoftware:kotlin-log:1.4.0"
+    implementation "com.google.firebase:firebase-analytics:17.6.0"
+    implementation "com.google.firebase:firebase-crashlytics:17.2.2"
+}
